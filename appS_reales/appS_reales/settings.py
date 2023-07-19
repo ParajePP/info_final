@@ -1,11 +1,10 @@
 
 
 from pathlib import Path
-______________________________________________________________________________
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-______________________________________________________________________________
+
 
 SECRET_KEY = 'django-insecure-d+hz*4+n-w$)mxvgxbt#wkmdwtkxr_-s$7v@$j-&%3mh38*#k#'
 
@@ -25,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    #
+#App propias
     
     'apps.usuario',
     
@@ -112,11 +111,9 @@ STATICFILES_DIRS = [
     BASE_DIR/ 'static',
 ]
 
-_________________________________________________________________________________
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-__________________________________________________________________________________
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
