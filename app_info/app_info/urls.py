@@ -23,4 +23,4 @@ urlpatterns = [
     path('', index),
     path('usuarios/', include('apps.usuarios.urls')),
     path ('publicaciones/', include('apps.publicaciones.urls')),
-]
+    ]
