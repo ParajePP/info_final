@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'app_info.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'app_info',
+        "NAME": 'app_info',
         'USER':'root',
         'PASSWORD': 'Cuidado.7',
         'HOST': '127.0.0.1',
