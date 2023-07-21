@@ -8,7 +8,7 @@ from .forms import RegistrarUsuariosForm
 # Create your views here.
 
 class RegistrarUsuario (CreateView): 
-    model= Usuario
-    template_name= 'usuarios/registrar.html'
-    form_class= RegistrarUsuariosForm
-    success_url= reverse_lazy('inicio')
+    model = Usuario
+    template_name = 'usuarios/registrar.html'
+    form_class = RegistrarUsuariosForm
+    success_url = reverse_lazy('inicio')
