@@ -1,13 +1,12 @@
 from django.shortcuts import render 
-from django.urls import path, icnlude
-from .views import inicio
+from django.urls import path, include
 
-def index (request):
-    template_name= 'index.html'
-    nombres = ['Noticias', 'Novedades', 'Blog', 'Perfil']
-    contexto = {'nombres':nombres}
+#def index (request):
+    #template_name= 'inicio.html'
+    #nombres = ['Noticias', 'Novedades', 'Blog', 'Perfil']
+    #contexto = {'nombres':nombres}
     
-    return render (request, template_name, contexto)
+    #return render (request, template_name, contexto)
 
 def inicio (request):
     template_name='inicio.html'

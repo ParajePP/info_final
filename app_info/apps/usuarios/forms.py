@@ -1,4 +1,4 @@
-from .models import Usuarios
+from .models import Usuario
 from django.db import transaction
 from django.contrib.auth.forms import UserCreationForm
 
@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class RegistrarUsuariosForm(UserCreationForm):
     
     class Meta:
-        model= Usuarios 
+        model = Usuario
         fields= ['nombre','apellido','edad', 'username','password1','password2', 'email','imagen']
         
     @transaction.atomic
