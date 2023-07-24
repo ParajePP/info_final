@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.urls import reverse_lazy
 
 AUTH_USER_MODEL= 'usuarios.Usuario'
 
@@ -23,6 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-s=i1r21nk!#2gta^+i8t@kc)tgs6-ziv$#q5!$y0-lxt2lgw^@'
+#-------------------------------------------------------------------------------
+LOGIN_URL = reverse_lazy('apps.usuarios:iniciar_sesion')
+LOGIN_REDIRECT_URL= reverse_lazy('inicio')
+LOGOUT_REDIRECT_URL= reverse_lazy('inicio')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

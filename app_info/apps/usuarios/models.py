@@ -13,7 +13,7 @@ class Usuario (AbstractUser):
     edad= models.CharField(max_length=2, null=True)
     is_staff= models.BooleanField( 'es_staff', default=False)
     imagen = models.ImageField(null=True, blank=True, upload_to='usuarios',default='usuarios/usuarios_def.png')
-    profile= models.ForeignKey(Profile)
+    #profile= models.ForeignKey(Profile)
     
     def __str__(self):
         return self.nombre 

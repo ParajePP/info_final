@@ -1,11 +1,19 @@
 {% extends 'base.html' %} 
+{%load static %}
+
 {%block title%}
-<title> </title>
+<title> Bolsa de trabajo </title>
 {%endblock%}
+
+{%block navbar%}
+{% include  'navbar.html' %}
+{%endblock%}
+
 
 {%block contenido%}
 
 
-
-<button type="button" class="btn btn-primary "href="{% url 'registrar'%}">Registro</button>
 {%endblock%}
+
+
+
