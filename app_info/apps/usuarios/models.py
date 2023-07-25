@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class Profile(models.Model):
-    avatar = models.ImageField(upload_to="images/usuarios/")
+    avatar = models.ImageField(upload_to="image/usuarios/")
     
     
 class Usuario (AbstractUser):
