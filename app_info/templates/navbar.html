@@ -4,18 +4,16 @@
 
   <div class="container-fluid">
 
-    <a class="navbar-brand text-white" href="#"><img src="{% static 'css/img/4.png' %}" alt="Logo" style="width: 160px; height: 80px;"></a>
+    <a class="navbar-brand text-white" href="{% url 'inicio' %}"><img src="{% static 'css/img/logo4-1.png' %}" alt="Logo" style="width: 170px; height: 80px;"></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
-
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
         </li>
 
         {% if user.is_authenticated %}
@@ -38,15 +36,12 @@
           </li>
         {% endif %}
       </ul>
+
+      <!-- Barra de búsqueda -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" style="max-width: 200px;">
+        <button class="btn btn-outline-success text-white" type="submit">Buscar</button>
+      </form>
     </div>
   </div>
 </nav>
-
-<div>
-  <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success text-white" type="submit">Search</button>
-      <span class="visually-hidden">Busqueda</span>
-    
-  </form>
-</div>
