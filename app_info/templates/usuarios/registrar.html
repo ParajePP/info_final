@@ -1,0 +1,27 @@
+ {% extends 'base.html' %}
+ {% block title %}
+ <title>Registro</title>
+ {% endblock%}
+ {% block contenido %}
+.contenedor{
+
+           
+         display: flex;
+         flex-direction: column;
+         justify-content: center;  
+         align-item: center;
+    }
+
+    
+<div class="container"> 
+    <form action= "" method="post"> {% csrf_token %}
+ 
+        p{
+            width:40%;
+        }
+        {{form.as_p}}
+    <button type="submit" value="Registrarse">
+    </form>
+</div>
+
+{% endblock%}

@@ -1,0 +1,51 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+    margin:0;
+    padding: 0; 
+
+    background-color:blue ;
+
+}
+
+header{
+    width: 100%;
+    height: 300px;
+
+    color: white;
+    font-size: 12px;
+    background-color: black;
+
+}
+
+
+.section{
+    width: 100%;
+    height: 300px;
+
+}
+
+#section_inicio{
+    
+    background-color: aliceblue;
+
+
+}
+#section_inicio2{
+   
+    
+    background-color: #98ce1b;
+
+
+}
+
+#section_inicio3{
+  
+    
+    background-color: #da1173;
+
+
+}
