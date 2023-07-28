@@ -41,14 +41,17 @@
               aria-expanded="false">
                 Administrador</a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% 'agregar_categoria' %}">Agregar categoria</a></li>
-                <li><a class="dropdown-item" href="{% 'agregar_publicaciones' %}">Agregar publicaciones</a></li>
+                
+               
                 <li><a class="dropdown-item" href="#">Modificar publicaciones</a></li>
                 <li><a class="dropdown-item" href="{%url 'listar_usuarios' %}">Listar usuarios</a></li>
+                
                 </ul>
               </li>
-          
-        
+              {%else%}
+           
+              <li><a class="dropdown-item" href="{% url 'Agregar_publicaciones' %}">Agregar publicaciones</a></li>
+         {%endif%}
         {% else %}
           <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="{% url 'iniciar_sesion' %}">Iniciar sesión</a>
@@ -58,7 +61,7 @@
           </li>
         {% endif %}
 
-        {%endif%}
+       
       </ul>
 
       <!-- Barra de búsqueda -->

@@ -10,7 +10,7 @@ app_name= 'publicaciones'
 
 urlpatterns = [
     path("Agregar_categoria/", AgregarCategoria.as_view(), name='Agregar_categoria'),
-    path("Agregar_publicacion/", AgregarPublicacion.as_view(), name='Agregar_publicacion'),
+    path("Agregar_publicaciones/", AgregarPublicacion.as_view(), name='Agregar_publicaciones'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
