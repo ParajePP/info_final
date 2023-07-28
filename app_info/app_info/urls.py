@@ -20,6 +20,7 @@ from django.urls import path, include
 from apps.usuarios.views import ListarUsuarios
 
 
+
 from .views import *
 #from .views import 
 from apps.usuarios.views import RegistrarUsuario
@@ -36,6 +37,8 @@ urlpatterns = [
     path("usuarios/", include('apps.usuarios.urls')),
     path("registrar/", RegistrarUsuario.as_view(), name= 'registrar'),
     path('listar_usuarios/', ListarUsuarios, name='listar_usuarios'),
+    path('publicaciones/', include('apps.publicaciones.urls')),
+   
 
     
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,56 @@
+{%extens 'base.html'%}
+{%loa static%}
+
+{%block navbar%}
+{%include 'navbar.html'%}
+{%endblock%}
+
+{%block contenido%}
+<div class="main-conteiner" style="text-align: center; margin-top:12%">
+    <form action="" method="post" enctype="multipart/form-data">
+        <form method="post">{%csrf_token%}
+            <div class="overlay">
+                <form>
+                    <div class="con">
+                        <header class="head-form">
+                            <h2>Agregar publicacion</h2>
+
+                            <p>Ingrese los datos y preseione el botón de guardar, luego podrá ver la publicación de su puesto laboral disponibe en la seccion pblicaciones: </p>
+                        </header>
+                        <div>
+                            {{form.as_p}}
+                            {{form.media}}
+
+                            <input class="btn btn-outline-secondary" type="submit" data-bs-toggle="modal"
+                            style="text-align:center;" data-bs.target="#exampleModal" value="Guardar publicacion"/>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabe" 
+                            adria-hidden="true">
+
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Publicacion cargada</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Su publicacion fue cargada con exito
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-outline-secondary" href="{%url 'inicio'%}">
+                                            Volver al inicio</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </form>
+</div>
+{%endblock%}

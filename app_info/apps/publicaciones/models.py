@@ -2,6 +2,7 @@ from typing import Any, Dict, Tuple
 from django.db import models
 from django.utils import timezone
 # Create your models here.
+from apps.usuarios.models import Usuario
 
 
 
@@ -15,15 +16,16 @@ class Categoria(models.Model):
 
 class Publicaciones(models.Model):
     titulo=models.CharField(max_length=50, null=False)
-    subtitulo=models.CharField(max_length=100, null=True, blank=True)
+    empresa=models.CharField(max_length=100, null=True, blank=True)
     fecha=models.DateTimeField(auto_now_add=True)
-    texto=models.TextField(null=False)
+    descripcion=models.TextField(null=False)
     activo=models.BooleanField(default=True)
-    categoria=models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, default= 'Sin categoría')
-    imagen=models.ImageField(null=True, blank=True, upload_to='media', default='static/post_default.png')
+    colaborador = models.ForeignKey(Usuario, on_delete= models.SET_NULL, null=True)
+    categoria=models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, default= 1)
+    imagen=models.ImageField(null=True, blank=True, upload_to='media', default='static/post_default.jpg')
     publicado=models.DateTimeField(default=timezone.now)
     class Meta:
-        ordering=['-publicado']
+        ordering=('-publicado'),
 
 
     def str(self) -> str:

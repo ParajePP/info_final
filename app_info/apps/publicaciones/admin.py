@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Categoria, Publicaciones
 
 @admin.register(Publicaciones)
-class PostsAdmin(admin.ModelAdmin):
-    list_display=('id','titulo','subtitulo','fecha','texto','activo','categoria','imagen','publicado')
+class Publicaciones(admin.ModelAdmin):
+    list_display=('titulo','empresa','fecha','descripcion','categoria','imagen','colaborador')
 
 
 

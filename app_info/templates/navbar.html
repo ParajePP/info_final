@@ -23,6 +23,8 @@
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="#">Trabajos</a>
         </li>
+       
+        
 
         {% if user.is_authenticated %}
 
@@ -33,24 +35,19 @@
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
-          {%if user.is_staff%}
+        {%if user.is_staff%}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Administrador
-          </a>
+              aria-expanded="false">
+                Administrador</a>
                 <ul class="dropdown-menu">
-            
-                  <li><a class="dropdown-item" href="#">Agregar Postulaciones</a></li>
-                  <li><a class="dropdown-item" href="#">Modificar Postulaciones</a></li>
-              
-                 <li><a class="dropdown-item" href="#">Listar Categorías</a></li>
-                 <li><hr class="dropdown-divider"></li>
-            {%else%}
-             
-            </ul>
-          </li>
-          {%endif%}
+                  <li><a class="dropdown-item" href="{% url'Agregar_categoria.html'%}">Agregar categoria</a></li>
+                  <li><a class="dropdown-item" href="{% url'Agregar_publicacion.html'%}">Agregar publicaciones</a></li>
+                  <li><a class="dropdown-item" href="#">Modificar publicaciones</a></li>
+                  <li><a class="dropdown-item" href="{%url 'listar_usuarios'%}">Listar usuarios</a></li>
+                </ul>
+              </li>
+          
         
         {% else %}
           <li class="nav-item">
@@ -60,6 +57,8 @@
             <a class="nav-link active text-white" aria-current="page" href="{% url 'registrar' %}">Registrarme</a>
           </li>
         {% endif %}
+
+        {%endif%}
       </ul>
 
       <!-- Barra de búsqueda -->
