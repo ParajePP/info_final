@@ -15,7 +15,12 @@
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'acerca_de' %}">Nosotros</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+        </li>
         {% if user.is_authenticated %}
           <li class="nav-item">
             <img src="{{ user.imagen.url }}" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
@@ -34,7 +39,9 @@
           <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="{% url 'registrar' %}">Registrarme</a>
           </li>
+          
         {% endif %}
+          
       </ul>
 
       <!-- Barra de búsqueda -->

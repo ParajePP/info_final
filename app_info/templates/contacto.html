@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Bolsa de Trabajo</title>
+{% endblock %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center">¡Contactáte con nosotros!</h1>
+      
+      <p class="lead text-justify">
+        Estas son nuestras redes sociales:
+      </p>
+      <a class="container" href="https://www.instagram.com"><img src="{% static 'css/img/instagram.jpg' %}" alt="Logo" style="width: 100px; height: 70px;"></a>
+      <a class="container" href="https://www.facebook.com"><img src="{% static 'css/img/facebook.avif' %}" alt="Logo" style="width: 100px; height: 70px;"></a>
+      <a class="container" href="https://www.twitter.com"><img src="{% static 'css/img/twitter.png' %}" alt="Logo" style="width: 100px; height: 70px;"></a>
+      <a class="container" href="https://www.gmail.com"><img src="{% static 'css/img/gmail.avif' %}" alt="Logo" style="width: 100px; height: 70px;"></a>
+        
+    </div>
+
+  </div>
+
+</div>
+</div>
+{% endblock %}

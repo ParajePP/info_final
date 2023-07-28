@@ -21,7 +21,6 @@ from apps.usuarios.views import ListarUsuarios
 
 
 from .views import *
-#from .views import 
 from apps.usuarios.views import RegistrarUsuario
 from django.conf.urls.static import static
 from django.conf import settings
@@ -32,10 +31,12 @@ app_name= 'apps.usuarios'
     
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("inicio/", inicio, name='inicio'),
+    path("", inicio, name='inicio'),
     path("usuarios/", include('apps.usuarios.urls')),
     path("registrar/", RegistrarUsuario.as_view(), name= 'registrar'),
     path('listar_usuarios/', ListarUsuarios, name='listar_usuarios'),
+    path('acerca_de/', acerca_de, name='acerca_de' ),
+    path('contacto/', contacto, name='contacto'),
 
     
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
