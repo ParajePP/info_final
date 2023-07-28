@@ -31,6 +31,6 @@ class Publicaciones(models.Model):
     def str(self) -> str:
         return self.titulo
 
-    def delete(self, using=None , keep_parents=False):
-        self.imagen.delete(self.imagen.name)
-        super().delete()
+    #def delete(self, using=None , keep_parents=False):
+    #    self.imagen.delete(self.imagen.name)
+     #   super().delete()

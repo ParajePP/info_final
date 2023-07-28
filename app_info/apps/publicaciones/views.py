@@ -9,13 +9,13 @@ from .models import *
 class AgregarCategoria(CreateView):
     model = Categoria
     fields=['nombre']
-    template_name= 'Agregar_categoria.html'
+    template_name= 'publicacion/Agregar_categoria.html'
     success_url= reverse_lazy('inicio')
     
 class AgregarPublicacion(CreateView):
     model = Categoria
     fields=['titulo', 'empresa', 'descripcion', 'fecha', 'imagen','categoria']
-    template_name= 'Agregar_publicacion.html'
+    template_name= 'publicacion/Agregar_publicaciones.html'
     success_url= reverse_lazy('inicio')
     
     

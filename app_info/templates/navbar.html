@@ -35,16 +35,16 @@
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
-        {%if user.is_staff%}
+       {% if user.is_staff %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
                 Administrador</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url'Agregar_categoria.html'%}">Agregar categoria</a></li>
-                  <li><a class="dropdown-item" href="{% url'Agregar_publicacion.html'%}">Agregar publicaciones</a></li>
-                  <li><a class="dropdown-item" href="#">Modificar publicaciones</a></li>
-                  <li><a class="dropdown-item" href="{%url 'listar_usuarios'%}">Listar usuarios</a></li>
+                <li><a class="dropdown-item" href="{% 'agregar_categoria' %}">Agregar categoria</a></li>
+                <li><a class="dropdown-item" href="{% 'agregar_publicaciones' %}">Agregar publicaciones</a></li>
+                <li><a class="dropdown-item" href="#">Modificar publicaciones</a></li>
+                <li><a class="dropdown-item" href="{%url 'listar_usuarios' %}">Listar usuarios</a></li>
                 </ul>
               </li>
           
