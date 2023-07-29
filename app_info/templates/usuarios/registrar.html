@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+ {%load static%}
+ {%block navbar %}
+{% include 'navbar.html'%}
+
+{% endblock %}
+ {% block title %}
+ <title>Registro</title>
+ {% endblock%}
+ {% block contenido %}
+    
+<div class="container"> 
+    <form enctype="multipart/form-data" action= "" method="post"> {% csrf_token %}
+ 
+    
+        {{form.as_p}}
+    <button type="submit" value="Registrarse">
+    </form>
+    <p> Registrarse </p>
+   
+    </div>
+
+    <div> jelou </div>
+    
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock%}
+
+
+
