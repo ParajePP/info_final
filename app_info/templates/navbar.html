@@ -27,7 +27,8 @@
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
             <ul class="dropdown-menu">
                   {% if user.is_staff %}
-                        <li><a class="dropdown-item" href="#">Categorías</a></li>
+                        <li><a class="dropdown-item" href=" {% url 'apps.publicaciones:agregar_categoria' %}">Agregar Categorías</a></li>
+                        <li><a class="dropdown-item" href=" {% url 'apps.publicaciones:agregar_publicaciones' %}">Agregar Publicaciones</a></li>
                   {% endif %}
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>

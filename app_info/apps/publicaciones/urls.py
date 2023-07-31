@@ -9,7 +9,7 @@ app_name = 'apps.publicaciones'
 
 urlpatterns = [
     path("agregar_categoria/", AgregarCategoria.as_view(), name='agregar_categoria'),
-    path("agregar_publicaciones", AgregarPublicaciones.as_view(), name='agregar_publicaciones'),
+    path("agregar_publicaciones/", AgregarPublicaciones.as_view(), name='agregar_publicaciones'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
