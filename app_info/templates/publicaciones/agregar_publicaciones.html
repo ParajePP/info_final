@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="main-container" style="text-align: center; margin-top: 12%;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="overlay">
+            <div class="con">
+                <header class="head-form">
+                    <h2>Agregar publicacion</h2>
+                    <p>Ingrese los datos a continuación y luego presione guardar, verá su publicación en las últimas publicaciones de Busqueda de Trabajo Chaco.</p>
+                </header>
+                <div>
+                    {{form.as_p}}
+                    {{form.media}}
+
+                    <input class="btn btn-outline-secondary" type="submit" data-bs-toggle="modal"
+                        style="text-align: center;" data-bs-toggle="exampleModal" value="Guardar publicacion"/>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="True">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Publicación cargada</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    ¡Su publicación ha sido cargada con éxito!
+                                </div>
+
+                                <div class="modal-footer">
+                                    <a class="btn btn-outline-secondary" href="{% url 'inicio' %}">Volver al inicio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
