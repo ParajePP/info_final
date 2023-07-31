@@ -26,8 +26,9 @@
             <img src="{{ user.imagen.url }}" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Categorías</a></li>
-             
+                  {% if user.is_staff %}
+                        <li><a class="dropdown-item" href="#">Categorías</a></li>
+                  {% endif %}
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
             </ul>
@@ -50,5 +51,5 @@
         <button class="btn btn-outline-success text-white" type="submit">Buscar</button>
       </form>
     </div>
-  </div>
+  </div> 
 </nav>
