@@ -15,8 +15,8 @@ class Publicaciones(models.Model):
     descripcion = models.TextField()
     fecha_agregado= models.DateTimeField(auto_now_add=False)
     is_staff= models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
-    published= models.DateTimeField(default=timezone)
-    imagen= models.ImageField(null=True, blank=True, upload_to='publicaciones/', default='publicaciones/trabajos_default.jpg')
+    published= models.DateTimeField(blank=False, default=timezone.now)
+    imagen= models.ImageField(null=True, blank=True, upload_to='publicaciones', default='publicaciones/trabajos_default.jpg')
     categoria= models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     
     def __str__(self) -> str:
