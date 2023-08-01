@@ -14,6 +14,6 @@ class AgregarCategoria(CreateView):
     
 class AgregarPublicaciones(CreateView):
     model = Publicaciones
-    fields = ['titulo','empresa','descripcion','is_staff','categoria']
+    fields = ['titulo','empresa','descripcion', 'fecha_agregado','categoria']
     template_name = 'publicaciones/agregar_publicaciones.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('')
