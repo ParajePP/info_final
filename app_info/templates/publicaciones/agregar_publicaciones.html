@@ -7,69 +7,15 @@
 {% endblock %}
 
 {% block contenido %}
-<div class="main-container" style="text-align: center; margin-top: 5%; margin-bottom: 10%;">
-    <form action="" method="POST" enctype="multipart/form-data">
+<div class="main-container" style="text-align: center; margin-top: 12%;">
+    
+    <form method="POST" action="{% url 'apps.publicaciones:agregar_publicaciones' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="overlay">
-            <div class="con">
-                <header class="head-form">
-                    <h2>Agregar publicacion</h2>
-                    <p>Ingrese los datos a continuación y luego presione guardar, verá su publicación en las últimas publicaciones de busqueda de Trabajo Chaco.</p>
-                </header>
-                <div>
-                    <div class="form-group">
-                        <label for="{{ form.titulo.id_for_label }}">Título:</label>
-                        {{ form.titulo }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.empresa.id_for_label }}">Empresa:</label>
-                        {{ form.empresa }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.descripcion.id_for_label }}">Descripción:</label>
-                        {{ form.descripcion }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.categoria.id_for_label }}">Categoría:</label>
-                        {{ form.categoria }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.fecha_agregado.id_for_label }}">Fecha de publicación:</label>
-                        {{ form.published }}
-                    </div>
-                    </div>
-                        {{ form.media }}
-                       
-                        <div>
+        {{form.as_p}}
 
-                    <input class="btn btn-outline-secondary" type="submit" data-bs-toggle="modal"
-                        style="text-align: center;" data-bs-toggle="exampleModal" value="Guardar publicacion"/>
-                        </div>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="True">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Publicación cargada</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-
-                                <div class="modal-body">
-                                    ¡Su publicación ha sido cargada con éxito!
-                                </div>
-
-                                <div class="modal-footer">
-                                    <a class="btn btn-outline-secondary" href="{% url 'inicio' %}">Volver al inicio</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
+    <button type="submit">Publicar noticia
+    </button>
+    
+</form>
 </div>
-<link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {% endblock %}

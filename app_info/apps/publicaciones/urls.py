@@ -4,12 +4,16 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from .views import *
+from . import views
 
 app_name = 'apps.publicaciones'
 
 urlpatterns = [
     path("agregar_categoria/", AgregarCategoria.as_view(), name='agregar_categoria'),
-    path("agregar_publicaciones/", AgregarPublicaciones.as_view(), name='agregar_publicaciones'),
+    path("agregar_publicaciones/", views.agregar_publicaciones, name='agregar_publicaciones'),
+    path("ver_publicaciones/", VerPublicaciones.as_view(), name='ver_publicaciones'),
+    path("detalle/<int:pk>/", DetallePublicacion.as_view(), name='detalle'),
+    path("agregar_comentario/<int:publicacion_id>", agregar_comentario, name='agregar_comentario'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
