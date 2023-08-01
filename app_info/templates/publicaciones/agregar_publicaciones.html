@@ -14,14 +14,34 @@
             <div class="con">
                 <header class="head-form">
                     <h2>Agregar publicacion</h2>
-                    <p>Ingrese los datos a continuación y luego presione guardar, verá su publicación en las últimas publicaciones de Busqueda de Trabajo Chaco.</p>
+                    <p>Ingrese los datos a continuación y luego presione guardar, verá su publicación en las últimas publicaciones de busqueda de Trabajo Chaco.</p>
                 </header>
                 <div>
-                    {{form.as_p}}
-                    {{form.media}}
+                    <div class="form-group">
+                        <label for="{{ form.titulo.id_for_label }}">Título:</label>
+                        {{ form.titulo }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.empresa.id_for_label }}">Empresa:</label>
+                        {{ form.empresa }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.descripcion.id_for_label }}">Descripción:</label>
+                        {{ form.descripcion }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.categoria.id_for_label }}">Categoría:</label>
+                        {{ form.categoria }}
+                    </div>
+                    
+                    </div>
+                        {{ form.media }}
+                       
+                        <div>
 
                     <input class="btn btn-outline-secondary" type="submit" data-bs-toggle="modal"
                         style="text-align: center;" data-bs-toggle="exampleModal" value="Guardar publicacion"/>
+                        </div>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="True">
